@@ -138,10 +138,6 @@ img{
 
 
 
-   .hero2{
-    
-   }
-
     .hero-container {
       margin-top: 10%;
       display: flex;
@@ -171,17 +167,6 @@ img{
       margin-bottom: 30px;
     }
 
-    /* .hero-text .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background: #2563eb;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s ease;
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-    } */
 
     .hero-text .btn:hover {
       /* background: #1e40af; */
@@ -254,7 +239,7 @@ img{
   }
 /*  */
 .carousel img {
-      height: 250px;
+      height: 339px;
     }
 .carousel-caption{
 background:rgba(0,0,0,0.6);
@@ -328,8 +313,8 @@ margin-bottom:15px;
 .blog-btn{
 display:inline-block;
 padding:8px 18px;
-background:#2197c5;
-color:white;
+background:white;
+color:#007f86;
 text-decoration:none;
 border-radius:20px;
 font-size:14px;
@@ -340,6 +325,62 @@ transition:0.3s;
 background:#007f86;
 }
 /* download code */
+.hero2 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #179eec, #e4e7ea);
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/*  */
+
+    .container {
+      display: flex;
+      align-items: center;
+      max-width: 800px;
+      margin: 50px auto;
+      gap: 20px;
+    }
+
+    .image img {
+      width: 320px;
+      height: auto;
+      border-radius: 10px;
+      
+    }
+
+    .content {
+      flex: 1;
+      margin-left: 2%;
+    }
+
+    .content h2 {
+      margin: 0;
+    }
+
+    .content p {
+      margin: 0;
+      color: #555;
+    }
+
 
 </style>
 </head>
@@ -347,7 +388,7 @@ background:#007f86;
 
 <header>
 <nav>
-  <h2>Muhammad Hamza</h2>
+  <h2><i>Muhammad Hamza</i></h2>
   <ul>
     <li><a href="#Philosophy">Philosophy</a></li>
     <li><a href="#pbl">PBL & STEAM</a></li>
@@ -364,7 +405,7 @@ background:#007f86;
 <section class="hero2">
     <div class="hero-container">
       <div class="hero-text">
-        <h2>My Teaching Philosophy</h2>
+        <h2><u>My Teaching Philosophy</u></h2>
         <p>
        <i> I am a passionate and dedicated <b>educator</b> who believes that learning should be 
         meaningful, engaging, and transformative. I strive to create a classroom where 
@@ -615,32 +656,4 @@ background:#007f86;
 
 
 
-  <style>
-    .container {
-      display: flex;
-      align-items: center;
-      max-width: 800px;
-      margin: 50px auto;
-      gap: 20px;
-    }
-
-    .image img {
-      width: 320px;
-      height: auto;
-      border-radius: 10px;
-      
-    }
-
-    .content {
-      flex: 1;
-      margin-left: 2%;
-    }
-
-    .content h2 {
-      margin: 0;
-    }
-
-    .content p {
-      margin: 0;
-      color: #555;
-    }
+  

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Background */
+.journal {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.journal-container {
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* Title */
+.journal-container h1 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* Glass Cards */
+.journal-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+  color: #fff;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.journal-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Headings */
+.journal-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+/* Text */
+.journal-card p {
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+    </style>
+</head>
+<body>
+    <section class="journal">
+  <div class="journal-container">
+
+    <h1>Professional Development Journal</h1>
+
+    <!-- Update 1 -->
+    <div class="journal-card">
+      <h2>Update 1: Background</h2>
+      <p><strong>Education:</strong> Bachelor in Computer Science, Master in AI & Machine Learning.</p>
+      <p><strong>Motivation:</strong> Inspired by my mother, a teacher with 26+ years of experience.</p>
+      <p><strong>Experience:</strong> 3 years as Computer Science Teacher and Lab Assistant.</p>
+      <p><strong>Goal:</strong> To inspire curiosity and lifelong learning in students.</p>
+      <p><strong>Achievement:</strong> LSE Innovative Ideas participant & certified practitioner.</p>
+      <p><strong>Skills:</strong> Communication, listening, resilience, innovation, self-learning.</p>
+    </div>
+
+    <!-- Update 2 -->
+    <div class="journal-card">
+      <h2>Update 2: Teaching Philosophy</h2>
+      <p>I believe education should be engaging, interactive, and student-centered.</p>
+      <p>I use tools like Canva and Zoom to enhance learning through UI/UX tasks and discussions.</p>
+      <p>AI should be used as a supportive tool, not a replacement for teachers.</p>
+    </div>
+
+    <!-- Update 3 -->
+    <div class="journal-card">
+      <h2>Update 3: Museum Visit Reflection</h2>
+      <p>My visit to the European Museum in Brussels showed how interactive learning enhances understanding.</p>
+      <p>Technology like tablets, visuals, and storytelling made history engaging and memorable.</p>
+    </div>
+
+    <!-- Update 4 -->
+    <div class="journal-card">
+      <h2>Update 4: Science Event Reflection</h2>
+      <p>I attended the Tour & Taxis Science Event in Brussels, where innovation and creativity were combined.</p>
+      <p>Students were actively learning through hands-on experiments and interactive activities.</p>
+      <p>This experience reinforced my belief in experiential learning.</p>
+    </div>
+
+  </div>
+</section>
+</body>
+</html>
