@@ -5,93 +5,314 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Game Based Learning</title>
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    margin:0;
-    padding:0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Based Learning</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
 }
 
-.container{
-    max-width:900px;
-    margin:60px auto;
-    background:white;
-    padding:40px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+nav ul{
+  display:flex;
+  list-style:none;
 }
 
-h1{
-    text-align:center;
-    color:#2c5364;
-    margin-bottom:30px;
+nav ul li{
+  margin-left:20px;
 }
 
-p{
-    font-size:18px;
-    line-height:1.7;
-    color:#333;
-    margin-bottom:18px;
+nav a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-.highlight{
-    color:#2c5364;
-    font-weight:bold;
+nav a:hover{
+  color:#00adb5;
 }
 
-.footer{
-    text-align:center;
-    margin-top:30px;
-    font-style:italic;
-    color:#666;
-}
-</style>
+    body {
+      background-color: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4f46e5, #9333ea, #ec4899);
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .game-card {
+      background: #1e293b;
+      border-radius: 20px;
+      padding: 30px;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .game-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .game-icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .btn-custom {
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    .primary-btn {
+      background: #ec4899;
+      color: white;
+    }
+
+    .secondary-btn {
+      background: #06b6d4;
+      color: white;
+    }
+
+    .feature-box {
+      background: #1e293b;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      height: 100%;
+    }
+
+    footer {
+      background: #020617;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer h3 {
+      color: #facc15;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
+<nav>
+  <h2><i><a href="https://mohahamza.github.io/TeachingPortfolio/">Muhammad Hamza</a></i></h2>
+  <ul>
+    <li><a href="teachingPhilospy.html">Philosophy</a></li>
+    <li><a href="Certification.html">Certifications</a></li>
+    <li><a href="gml.html">Game-Based</a></li>
+    <li><a href="Blog.html">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Game Based Learning</h1>
+      <p class="mt-4">
+        Educational games for Primary and Secondary students.
+        Learn through fun activities, quizzes, coding, science,
+        and interactive adventures.
+      </p>
 
-<div class="container">
+      <div class="mt-4">
+        <button class="btn btn-light btn-lg me-3">Start Learning</button>
+        <button class="btn btn-outline-light btn-lg">Explore Games</button>
+      </div>
+    </div>
+  </section>
 
-<h1>My Teaching Philosophy</h1>
+  <!-- Primary Students -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Primary Students Games</h2>
 
-<p>
-My teaching philosophy is based on the belief that technology education should empower students with 
-<strong class="highlight">practical skills, creativity, and problem-solving abilities</strong>. 
-With a Bachelor's degree in Computer Science and a Master's degree in Data Science and Machine Learning, 
-I aim to provide students with both strong theoretical knowledge and practical coding experience.
-</p>
+      <div class="row g-4 mt-4">
 
-<p>
-As an IT teacher, my goal is to make <span class="highlight">coding engaging and accessible</span> for all students. 
-I believe programming is best learned through practice, projects, and real-world applications. 
-Therefore, I encourage students to participate in coding exercises, collaborative projects, and hands-on activities 
-that help them understand how technology solves real problems.
-</p>
+        <div class="col-md-4">
+          <div class="game-card text-center">
+            <div class="game-icon">📚</div>
+            <h3>Alphabet Adventure</h3>
+            <p>
+              Learn letters and spelling through fun story games.
+            </p>
+            <button class="btn btn-custom primary-btn">
+              Play Now
+            </button>
+          </div>
+        </div>
 
-<p>
-I also believe that every student learns in different ways. My classroom environment focuses on 
-<strong class="highlight">support, curiosity, and innovation</strong>. 
-I guide students step-by-step through programming concepts while encouraging them to explore their own ideas and build confidence in their technical abilities.
-</p>
+        <div class="col-md-4">
+          <div class="game-card text-center">
+            <div class="game-icon">🏎️</div>
+            <h3>Math Racing</h3>
+            <p>
+              Solve math problems and win exciting races.
+            </p>
+            <button class="btn btn-custom primary-btn">
+              Play Now
+            </button>
+          </div>
+        </div>
 
-<p>
-In addition, I introduce students to modern technologies such as 
-<span class="highlight">artificial intelligence, machine learning, and data analysis</span> 
-so they can understand how technology is shaping the future.
-</p>
+        <div class="col-md-4">
+          <div class="game-card text-center">
+            <div class="game-icon">🔬</div>
+            <h3>Science Explorer</h3>
+            <p>
+              Discover science through experiments and mini-games.
+            </p>
+            <button class="btn btn-custom primary-btn">
+              Play Now
+            </button>
+          </div>
+        </div>
 
-<p>
-Ultimately, my mission as an IT educator is to inspire students to become 
-<strong class="highlight">creative thinkers, lifelong learners, and responsible technology users</strong> 
-who can contribute positively to the digital world.
-</p>
+      </div>
+    </div>
+  </section>
 
-<div class="footer">
-Future IT Educator | Coding & Technology Enthusiast
-</div>
+  <!-- Secondary Students -->
+  <section class="py-5 bg-dark">
+    <div class="container">
+      <h2 class="section-title text-center">Secondary Students Games</h2>
 
-</div>
+      <div class="row g-4 mt-4">
+
+        <div class="col-md-4">
+          <div class="game-card text-center">
+            <div class="game-icon">⚔️</div>
+            <h3>History Battle</h3>
+            <p>
+              Challenge your friends with history quizzes.
+            </p>
+            <button class="btn btn-custom secondary-btn">
+              Start Challenge
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="game-card text-center">
+            <div class="game-icon">💻</div>
+            <h3>Coding Arena</h3>
+            <p>
+              Learn coding and problem-solving through games.
+            </p>
+            <button class="btn btn-custom secondary-btn">
+              Start Challenge
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="game-card text-center">
+            <div class="game-icon">🧪</div>
+            <h3>Physics Lab</h3>
+            <p>
+              Interactive physics experiments and simulations.
+            </p>
+            <button class="btn btn-custom secondary-btn">
+              Start Challenge
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Why Game-Based Learning?</h2>
+
+      <div class="row g-4 mt-4">
+
+        <div class="col-md-3">
+          <div class="feature-box">
+            <h1>🏆</h1>
+            <h4>Rewards</h4>
+            <p>Earn badges and points while learning.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="feature-box">
+            <h1>🎯</h1>
+            <h4>Challenges</h4>
+            <p>Interactive activities improve engagement.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="feature-box">
+            <h1>👨‍🏫</h1>
+            <h4>Smart Learning</h4>
+            <p>Educational content designed for schools.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="feature-box">
+            <h1>🌍</h1>
+            <h4>Teamwork</h4>
+            <p>Collaborative multiplayer learning games.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+
+    <p class="text-secondary mt-3">
+      © 2026 Hamza Learning Games
+    </p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+
+
+
