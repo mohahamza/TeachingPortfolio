@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Page</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: #0f172a;
+      color: white;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Navbar */
+
+    nav{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(10px);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 62px;
+    }
+
+    .logo a{
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .nav-links{
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a{
+      text-decoration: none;
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: 0.25s ease;
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: transparent;
+    }
+
+    .nav-links a:hover{
+      background: rgba(255, 255, 255, 0.1);
+      color: #22c55e;
+      transform: translateY(-1px);
+    }
+
+    /* Contact Form */
+
+    .container{
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .contact-box{
+      width: 450px;
+      background: linear-gradient(135deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%);
+      background-clip: padding-box;
+      color: white;
+      backdrop-filter: blur(18px);
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 140px;
+      height: 140px;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      filter: blur(12px);
+      pointer-events: none;
+    }
+
+    .contact-box::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -30px;
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      filter: blur(14px);
+      pointer-events: none;
+    }
+
+    .contact-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .contact-box h1{
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ffffff;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .input-group{
+      margin-bottom: 25px;
+    }
+
+    .input-group label{
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #f8f9fa;
+    }
+
+    .input-group input,
+    .input-group textarea{
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 15px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .input-group input::placeholder,
+    .input-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .input-group textarea{
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background: linear-gradient(135deg, #feda75 0%, #fa7e1e 30%, #d62976 60%, #962fbf 100%);
+      color:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+
+  <nav>
+
+    <div class="logo">
+  <a href="index.html">Muhammad Hamza</a>
+</div>
+
+    <ul class="nav-links">
+      <li><a href="teachingPhilospy.html">Teaching Philosophy</a></li>
+      <li><a href="gml.html">Game-Based</a></li>
+      <li><a href="Certification.html">Certifications</a></li>
+      <!--  <li><a href="Blog.html">Blogs</a></li> -->
+    </ul>
+
+  </nav>
+
+  <!-- Contact Form -->
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h1>Contact Us</h1>
+
+      <form>
+
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+          <label>Message</label>
+          <textarea placeholder="Write your message"></textarea>
+        </div>
+
+        <button type="submit" link="mohahamza420@gmail.com" class="btn">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

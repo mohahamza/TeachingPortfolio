@@ -28,29 +28,47 @@ header{
 }
 
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px 28px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  min-height: 62px;
 }
 
 nav ul{
   display:flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
   list-style:none;
 }
 
 nav ul li{
-  margin-left:20px;
+  margin: 0;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  transition:0.3s;
+  font-weight:600;
+  font-size:0.95rem;
+  letter-spacing:0.02em;
+  padding:10px 12px;
+  border-radius:18px;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
 nav a:hover{
-  color:#00adb5;
+  color:#22c55e;
+  background: rgba(255,255,255,0.1);
 }
 
 section{
@@ -150,41 +168,89 @@ img{
 
     .hero-text {
       flex: 1;
-      animation: fadeInLeft 1s ease forwards;
       text-align: left;
     }
 
-    .hero-text h1 {
-      font-size: 3rem;
+    .hero-text h2 {
+      font-size: 3.5rem;
       margin-bottom: 20px;
-      color: #0f172a;
+      color: #1b1b2f;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .hero-text h2 u {
+      text-decoration: none;
+      background: linear-gradient(90deg, #1e40af, #0ea5e9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero-text p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: #475569;
-      line-height: 1.7;
-      margin-bottom: 30px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      font-style: italic;
+    }
+
+    .hero-text b {
+      color: #1e40af;
+      font-weight: 700;
     }
 
 
-    .hero-text .btn:hover {
-      /* background: #1e40af; */
+    .hero-text .blog-btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #1e40af, #1e3a8a);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.25);
+      border: none;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-text .blog-btn:hover {
       transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+      background: linear-gradient(135deg, #1e3a8a, #1e40af);
     }
 
     .hero-image {
       flex: 1;
-      text-align: right;
-      animation: fadeInRight 1s ease forwards;
-      
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(14, 165, 233, 0.15));
+      border-radius: 30px;
+      z-index: -1;
     }
 
     .hero-image img {
       width: 100%;
-      max-width: 500px;
+      max-width: 450px;
       border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+      border: 3px solid #ffffff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .hero-image img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 50px rgba(30, 64, 175, 0.25);
     }
 
     /* Animations */
@@ -212,14 +278,27 @@ img{
     }
      /* this code is for button under social media*/
       .btn{
-    height: 70px;
-    background-color: #1e40af;
+        height: 60px;
+        background-color: #1e40af;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        margin-right: 12px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn:hover {
+        background-color: #1e3a8a;
+        border-color: #1e40af;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(30, 64, 175, 0.2);
       }
     /* this code is for logo of social media accounts */
     .btn img {
-  width: 45px;   /* adjust size here */
-  height: 45px;
-}
+      width: 40px;
+      height: 40px;
+    }
 .hero2{
   padding-left: 11%;
   padding-right: 10%;
@@ -233,6 +312,266 @@ img{
   padding-left: 25%;
   padding-right: 25%;
   }
+.slider-section {
+  padding: 68px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f0f4f8, #e1e8ed);
+}
+.slider-section h2 {
+  margin-bottom: 30px;
+  color: #1b1b2f;
+}
+.slider-section .carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.slider-section .carousel img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+@media (max-width: 768px) {
+  .slider-section .carousel img {
+    height: 300px;
+  }
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.image-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .image-grid img {
+    height: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.slide-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.slide-row img {
+  flex: 1;
+  min-width: 200px;
+  max-width: 25%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.slide-row img:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .slide-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .slide-row img {
+    max-width: 80%;
+    height: 150px;
+  }
+}
+
+/* Review Card Styles */
+.review-carousel {
+  background: transparent !important;
+}
+
+.review-carousel .carousel-inner {
+  min-height: 420px;
+}
+
+.review-carousel .carousel-item {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.95));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+  margin-bottom: 15px;
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: #ffd700;
+  letter-spacing: 2px;
+}
+
+.star {
+  display: inline-block;
+}
+
+.review-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 15px 0;
+  font-style: italic;
+}
+
+.review-author {
+  font-size: 0.95rem;
+  color: #1e40af;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.review-carousel .carousel-control-prev,
+.review-carousel .carousel-control-next {
+  background-color: rgba(30, 64, 175, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.review-carousel .carousel-control-prev:hover,
+.review-carousel .carousel-control-next:hover {
+  background-color: rgba(30, 64, 175, 0.8);
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    padding: 20px;
+    min-height: 250px;
+  }
+  
+  .review-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Color-Coded Review Carousels */
+/* Carousel 1 - Blue (Students' Learning Journey) */
+.carousel-blue .review-card-blue {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(59, 130, 246, 0.08));
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.carousel-blue .review-card-blue:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.carousel-blue .carousel-control-prev,
+.carousel-blue .carousel-control-next {
+  background-color: rgba(59, 130, 246, 0.6);
+}
+
+.carousel-blue .carousel-control-prev:hover,
+.carousel-blue .carousel-control-next:hover {
+  background-color: rgba(59, 130, 246, 0.9);
+}
+
+/* Carousel 2 - Purple (Teaching Methods) */
+.carousel-purple .review-card-purple {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(167, 139, 250, 0.08));
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.carousel-purple .review-card-purple:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+}
+
+.carousel-purple .carousel-control-prev,
+.carousel-purple .carousel-control-next {
+  background-color: rgba(139, 92, 246, 0.6);
+}
+
+.carousel-purple .carousel-control-prev:hover,
+.carousel-purple .carousel-control-next:hover {
+  background-color: rgba(139, 92, 246, 0.9);
+}
+
+/* Carousel 3 - Green (Parents & Colleagues) */
+.carousel-green .review-card-green {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(74, 222, 128, 0.08));
+  border: 2px solid rgba(34, 197, 94, 0.3);
+}
+
+.carousel-green .review-card-green:hover {
+  border-color: rgba(34, 197, 94, 0.6);
+}
+
+.carousel-green .carousel-control-prev,
+.carousel-green .carousel-control-next {
+  background-color: rgba(34, 197, 94, 0.6);
+}
+
+.carousel-green .carousel-control-prev:hover,
+.carousel-green .carousel-control-next:hover {
+  background-color: rgba(34, 197, 94, 0.9);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  color: #1b1b2f;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 40px;
+  font-style: italic;
+}
   #card2{
     background-color: #2197c5;
     color: white;
@@ -326,28 +665,36 @@ background:#007f86;
 }
 /* download code */
 .hero2 {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #179eec, #e4e7ea);
+  background: linear-gradient(to bottom, #ffffff 0%, #f3f4f6 100%);
+  position: relative;
+  padding: 4px 20px;
+}
+
+.hero2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(59, 130, 246, 0.08));
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-
-  padding: 40px;
-  border-radius: 20px;
-
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 /*  */
@@ -389,13 +736,13 @@ background:#007f86;
 
 <header>
 <nav>
-  <h2><i><a href="https://mohahamza.github.io/TeachingPortfolio/">Muhammad Hamza</a></i></h2>
+  <h2><i><a href="">Muhammad Hamza</a></i></h2>
   <ul>
-    <li><a href="teachingPhilospy.html">Philosophy</a></li>
-    <li><a href="Certification.html">Certifications</a></li>
+    <li><a href="teachingPhilospy.html">Teaching Phillospy </a></li>
     <li><a href="gml.html">Game-Based</a></li>
-    <li><a href="Blog.html">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="Certification.html">Certifications</a></li>
+      <!-- <li><a href="Blog.html">Blog</a></li> -->
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 </header>
@@ -464,21 +811,24 @@ background:#007f86;
 
 <div class="container">
   <div class="image">
-    <img src="10.jpeg" alt="Sample Image">
+    <img src="10.jpeg" alt="Hamza teaching students">
   </div>
   <div class="content">
-    <h1>My Teaching 📖🧑‍🏫 Experience</h1>
-    <h3>International School Leuven ISL </h3>
-      <p>Position: Computer Teacher Internee</p>
+    <h1>Hamza's Teaching Experience</h1>
+    <h3>International School Leuven ISL</h3>
+      <p>Position: Computer Teacher Intern</p>
       <p>Years: 2025 – 2026</p>
-    <hr></hr>
-       <h3>IMCB F-8/4 </h3>
+      <p>At ISL, Hamza supported students in building coding skills and confidence with digital tools, while helping them bring technology projects to life through practical classroom learning.</p>
+    <hr>
+       <h3>IMCB F-8/4</h3>
       <p>Position: Computer Teacher & Lab Assistant</p>
       <p>Years: 2021 – 2024</p>
-    <hr></hr>
+      <p>He led lab-based lessons, maintained computer resources, and guided students through creative computing activities that combined logic, design, and collaboration.</p>
+    <hr>
       <h3>Operations Pro</h3>
       <p>Position: Web Development Trainee</p>
-      <p>Years: 2018 – 2020</p>    
+      <p>Years: 2018 – 2020</p>
+      <p>During this role, Hamza built responsive web pages and digital teaching tools that made learning more interactive and accessible for students and teachers alike.</p>
   </div>
 </div>
 
@@ -486,22 +836,57 @@ background:#007f86;
   <h2>Project-Based Learning & STEAM</h2>
   <div class="card-container">
     <div class="card" id="card2">
-      <h3>Short International Internship Steam project </h3>
-      <p>4 different type of activities teachers will perform. Clouds, Animals, Planes, logistics</p>
+      <h3>International STEAM Internship</h3>
+      <p>Hamza organized short STEAM lessons around clouds, animals, planes, and logistics to help learners explore science through hands-on creative projects.</p>
       <a href="teachingPhilospy.html" class="blog-btn">Read More→</a>
     </div>
     <div class="card">
-      <h3>Long International Internship</h3>
-      <p>4 different type of activities teachers will perform. Technology, Science, Art, logistics</p>
+      <h3>Extended STEAM Internship</h3>
+      <p>This longer internship paired technology, science, art, and logistics in student-centered projects that developed confidence, problem solving, and teamwork.</p>
       <a href="teachingPhilospy.html" class="blog-btn">Read More→</a>
     </div>
-    
-   
-  <div class="card-container">
     <div class="card" id="card2">
-      <h3>USAIDS STEAM Project </h3>
-      <p>beginner block-based animation to advanced robotics and AI, fostering computational thinking and problem-solving skills.</p>
-      <a href="teachingPhilospy.html" class="blog-btn" >Read More→</a>
+      <h3>USAIDS STEAM Project</h3>
+      <p>Hamza supported learners from beginner block-based animation to advanced robotics and AI, promoting computational thinking and creative collaboration.</p>
+      <a href="teachingPhilospy.html" class="blog-btn">Read More→</a>
+    </div>
+  </div>
+</section>
+
+<section id="slider" class="slider-section">
+  <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Some Highlights from Short and long Internships</h2>
+  <div id="imageSlider" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#imageSlider" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#imageSlider" data-bs-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="slide-row">
+          <img src="Picture15.jpeg" alt="Slide 1">
+          <img src="Picture16.jpeg" alt="Slide 2">
+          <img src="Picture17.jpeg" alt="Slide 3">
+          <img src="Picture18.jpeg" alt="Slide 4">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="slide-row">
+          <img src="Picture19.jpeg" alt="Slide 5">
+          <img src="Picture20.jpeg" alt="Slide 6">
+          <img src="Picture21.jpeg" alt="Slide 5">
+          <img src="Picture22.jpeg" alt="Slide 6">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </section>
 
 <section class="hero3">
@@ -509,7 +894,7 @@ background:#007f86;
       <div class="hero-text">
         <h2>Game-Based Learning</h2>
         <p>
-          I integrate coding games and interactive platforms such as Scratch, Kahoot, and coding puzzles to help students learn programming concepts through play. These activities encourage collaboration, creativity, and critical thinking while making learning enjoyable.
+          Hamza uses coding games and interactive platforms like Scratch, Kahoot, and coding puzzles to make programming fun, build collaboration, and sharpen students’ problem-solving skills.
         </p>
         <a href="gml.html" class="blog-btn">Read More→</a>
       </div>
@@ -519,78 +904,157 @@ background:#007f86;
       </div>
     </div>
   </section>
-<!-- slider -->
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+  <h2>What Others Say About Hamza</h2>
+  <p class="section-subtitle">Hear from students, parents, and colleagues about the impact of his teaching</p>
 <div class="container mt-5">
   <div class="row">
 
-    <!-- Carousel 1 -->
+    <!-- Carousel 1 - Students' Learning Journey -->
     <div class="col-md-4">
-      <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+      <div id="carousel1" class="carousel slide review-carousel carousel-blue" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="3.jpg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-        <h5>Student</h5>
-        <p>An inspiring teacher who makes learning exciting and meaningful.</p>
-      </div>
+            <div class="review-card review-card-blue">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"Before Hamza's class, I was intimidated by coding. Now I'm confident and excited to build projects. He made everything click for me!"</p>
+              <p class="review-author">- Zainab (Grade 10 Student)</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <img src="4.jpg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-        <h5>Student</h5>
-        <p>An inspiring teacher who makes learning exciting and meaningful.</p>
-      </div>
+            <div class="review-card review-card-blue">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"What I love most about Hamza's teaching is how he connects real-world problems to coding. His STEAM projects showed me why what we learn matters."</p>
+              <p class="review-author">- Ali (Grade 9 Student)</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="review-card review-card-blue">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"Hamza's classroom is a safe space where asking questions is encouraged. I've never felt judged, only supported in my learning journey."</p>
+              <p class="review-author">- Leila (Grade 11 Student)</p>
+            </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
 
-    <!-- Carousel 2 -->
+    <!-- Carousel 2 - Student Reviews -->
     <div class="col-md-4">
-      <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+      <div id="carousel2" class="carousel slide review-carousel carousel-purple" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="4.jpg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-        <h5>Student</h5>
-        <p>An inspiring teacher who makes learning exciting and meaningful.</p>
-      </div>
+            <div class="review-card review-card-purple">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"Hamza is an inspiring teacher who makes learning exciting and meaningful. His creative approach to teaching has transformed how I view programming and problem-solving."</p>
+              <p class="review-author">- Ahmed (Student)</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <img src="5.jpg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-        <h5>Student</h5>
-        <p>An inspiring teacher who makes learning exciting and meaningful.</p>
-      </div>
+            <div class="review-card review-card-purple">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"The way Hamza teaches with games and interactive activities makes complex concepts easy to understand. His passion for education is truly contagious!"</p>
+              <p class="review-author">- Fatima (Student)</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="review-card review-card-purple">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"Hamza made me believe that I could be good at coding. His patience, encouragement, and innovative teaching methods have been instrumental in my success."</p>
+              <p class="review-author">- Samir (Student)</p>
+            </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
 
-    <!-- Carousel 3 -->
+    <!-- Carousel 3 - Parents & Colleagues -->
     <div class="col-md-4">
-      <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+      <div id="carousel3" class="carousel slide review-carousel carousel-green" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="5.jpg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-        <h5>Student</h5>
-        <p>An inspiring teacher who makes learning exciting and meaningful.</p>
-      </div>
+            <div class="review-card review-card-green">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"My child comes home excited about coding because of Hamza's engaging classes. His dedication to student success is truly commendable."</p>
+              <p class="review-author">- Mrs. Khan (Parent)</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <img src="3.jpg" class="d-block w-100" alt="">
-            <div class="carousel-caption d-none d-md-block">
-        <h5>Student</h5>
-        <p>An inspiring teacher who makes learning exciting and meaningful.</p>
-      </div>
+            <div class="review-card review-card-green">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"Working alongside Hamza has been inspiring. His innovative STEAM initiatives and collaborative approach have elevated our entire computer science program."</p>
+              <p class="review-author">- Dr. Hassan (Department Head)</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="review-card review-card-green">
+              <div class="review-header">
+                <div class="stars">
+                  <i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i><i class="star">★</i>
+                </div>
+              </div>
+              <p class="review-text">"Hamza's commitment to integrating game-based learning with critical pedagogy has set new standards for excellence in our institution."</p>
+              <p class="review-author">- Prof. Amina (Education Coordinator)</p>
+            </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
 
   </div>
 </div>
+</section>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

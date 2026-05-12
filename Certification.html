@@ -6,43 +6,123 @@
 <title>Certificate Viewer</title>
 
 <style>
-  body {
-    /* margin: 0; */
-    font-family: Arial, sans-serif;
-   
-     background: linear-gradient(to right, #1f3c88, #b4dbf0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    height: 100vh;
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
   }
 
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    background: linear-gradient(to right, #1f3c88, #b4dbf0);
+    min-height: 100vh;
+  }
+
+  /* Navbar */
+
+  nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(10px);
+    padding:12px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    min-height: 62px;
+  }
+
+  .logo a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size:1.1rem;
+    font-weight:bold;
+    padding:8px 10px;
+    border-radius:16px;
+    transition: background 0.25s ease;
+  }
+
+  .logo a:hover {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .nav-links{
+    list-style:none;
+    display:flex;
+    flex-wrap: wrap;
+    gap:18px;
+    margin:0;
+    padding:0;
+  }
+
+  .nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:0.95rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    transition:0.25s ease;
+    padding:10px 12px;
+    border-radius:18px;
+  }
+
+  .nav-links a:hover{
+    background: rgba(255,255,255,0.1);
+    color:#22c55e;
+    transform: translateY(-1px);
+  }
+
+  /* Certificates */
+
   .wrapper {
-    display: flex;
-    gap: 20px; /* space between cards */
-   
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 50px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   .container {
     text-align: center;
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 250px;
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .certificate-preview {
+    width: 100%;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: rgba(248, 250, 252, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .certificate-preview embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
   }
 
   h1 {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #2c3e50;
-  }
-
-  p {
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 14px;
   }
 
   .btn {
@@ -54,45 +134,94 @@
     border-radius: 6px;
     text-decoration: none;
     transition: 0.3s;
+    margin-top:15px;
   }
 
   .btn:hover {
     background: red;
-    
   }
+
 </style>
 </head>
 
 <body>
 
+<!-- Navbar -->
+
+<nav>
+
+  <div class="logo">
+    <a href="index.html">Muhammad Hamza</a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="teachingPhilospy.html">Teaching Philosophy</a></li>
+    <li><a href="gml.html">Game-Based</a></li>
+    <li><a href="Certification.html">Certifications</a></li>
+    <!-- <li><a href="Blog.html">Blogs</a></li> -->
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+
+<!-- Certificates -->
 
 <div class="wrapper">
 
   <div class="container">
-    <h1>Design a Dream Destination with Ai</h1>
-   
-    <embed src="Microsoft 1 .pdf" type="application/pdf" width="100%" height="250px">
-    <a href="Microsoft 1 .pdf" target="_blank" class="btn">View PDF</a>
+    <h1>Design a Dream Destination with AI</h1>
+
+    <div class="certificate-preview">
+      <embed src="Microsoft 1 .pdf" type="application/pdf">
+    </div>
+
+    <a href="Microsoft 1 .pdf"
+       target="_blank"
+       class="btn">
+       View PDF
+    </a>
   </div>
 
   <div class="container">
     <h1>Intro To Generative AI and Agents</h1>
 
-    <embed src="Microsoft 2.pdf" type="application/pdf" width="100%" height="250px">
-    <a href="Microsoft 2.pdf" target="_blank" class="btn">View PDF</a>
+    <div class="certificate-preview">
+      <embed src="Microsoft 2.pdf" type="application/pdf">
+    </div>
+
+    <a href="Microsoft 2.pdf"
+       target="_blank"
+       class="btn">
+       View PDF
+    </a>
   </div>
 
   <div class="container">
-    <h1>Overview of AI concepts Certificate</h1>
-  
-    <embed src="Mucrosoft 3.pdf" type="application/pdf" width="100%" height="250px">
-    <a href="Mucrosoft 3.pdf" target="_blank" class="btn">View PDF</a>
+    <h1>Overview of AI Concepts Certificate</h1>
+
+    <div class="certificate-preview">
+      <embed src="Mucrosoft 3.pdf" type="application/pdf">
+    </div>
+
+    <a href="Mucrosoft 3.pdf"
+       target="_blank"
+       class="btn">
+       View PDF
+    </a>
   </div>
-   <div class="container">
-    <h1>Embrace responsible AI Principal and Practices</h1>
-   
-    <embed src="Microsoft 4.pdf" type="application/pdf" width="100%" height="250px">
-    <a href="Microsoft 4.pdf" target="_blank" class="btn">View PDF</a>
+
+  <div class="container">
+    <h1>Responsible AI Principles and Practices</h1>
+
+    <div class="certificate-preview">
+      <embed src="Microsoft 4.pdf" type="application/pdf">
+    </div>
+
+    <a href="Microsoft 4.pdf"
+       target="_blank"
+       class="btn">
+       View PDF
+    </a>
   </div>
 
 </div>

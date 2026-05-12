@@ -8,299 +8,400 @@
   <!-- Internal CSS -->
   <style>
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
-}
+    :root {
+      --bg-start: #0f172a;
+      --bg-end: #1e3a8a;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --card-border: rgba(255, 255, 255, 0.4);
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.15);
+    }
 
-nav ul{
-  display:flex;
-  list-style:none;
-}
-
-nav ul li{
-  margin-left:20px;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#00adb5;
-}
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), transparent 30%),
+                  linear-gradient(180deg, var(--bg-start) 0%, #0b1120 45%, #111827 100%);
+      color: var(--text-main);
+      min-height: 100vh;
     }
 
-    .journal {
-      padding: 60px 20px;
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.2), transparent 24%),
+                        radial-gradient(circle at 80% 10%, rgba(14, 165, 233, 0.18), transparent 20%),
+                        radial-gradient(circle at 75% 80%, rgba(59, 130, 246, 0.16), transparent 22%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
-      justify-content: center;
-    }
-
-    .journal-container {
-      width: 90%;
-      max-width: 1100px;
-    }
-
-    .journal-container h1 {
-      text-align: center;
-      color: #fff;
-      font-size: 2.8rem;
-      margin-bottom: 40px;
-    }
-
-    .journal-card {
-      background: rgba(255, 255, 255, 0.1);
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 12px 28px;
+      background: rgba(15, 23, 42, 0.88);
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: 20px;
-      padding: 25px;
-      margin-bottom: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      color: #fff;
-      transition: transform 0.3s ease, background 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 62px;
     }
 
-    .journal-card:hover {
+    nav h2 a {
+      color: #f8fafc;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 8px 10px;
+      border-radius: 16px;
+      transition: background 0.25s ease;
+    }
+
+    nav h2 a:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav a {
+      color: rgba(248, 250, 252, 0.85);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    nav a:hover {
+      color: #22c55e;
+      transform: translateY(-1px);
+    }
+
+    .fh5co-personal-development {
+      position: relative;
+      padding: 80px 20px 120px;
+      z-index: 1;
+    }
+
+    .site-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .universal-h2 {
+      font-size: clamp(2.5rem, 2.8vw, 3.6rem);
+      margin-bottom: 0.85rem;
+      color: #f8fafc;
+      line-height: 1.05;
+    }
+
+    .universal-h2-bckg {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #f8fafc;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .development-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.90) 100%);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 2rem;
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.25);
+      padding: 2.5rem;
+      backdrop-filter: blur(18px);
+      overflow: hidden;
+    }
+
+    .development-header h3 {
+      font-size: 2rem;
+      margin: 0;
+      color: #111827;
+    }
+
+    .development-subtitle {
+      max-width: 760px;
+      margin: 1rem 0 2rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .development-body {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .development-point {
+      position: relative;
+      background: #ffffff;
+      border-radius: 1.75rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(34, 197, 94, 0.18);
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .development-point:hover {
       transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 28px 45px rgba(15, 23, 42, 0.14);
     }
 
-    .journal-card h2 {
-      margin-bottom: 15px;
-      font-size: 1.8rem;
+    .development-point::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 65%;
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), transparent 52%);
+      pointer-events: none;
     }
 
-    .journal-card h3 {
-      margin-top: 15px;
-      font-size: 1.2rem;
+    .development-point h4 {
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      color: #0f172a;
     }
 
-    .journal-card p, .journal-card li {
-      line-height: 1.6;
-      margin-bottom: 8px;
+    .development-point p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin: 0;
     }
 
-    .journal-card ul {
-      padding-left: 20px;
+    .reference-link {
+      display: inline-flex;
+      margin-top: 1.1rem;
+      color: #16a34a;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
     }
-    .pictures{
-        margin-top: 30px;
-        width: 270px;
-        height: 270px;
-        border-radius: 10%;
-    }   
+
+    .reference-link:hover {
+      color: #22c55e;
+      transform: translateX(3px);
+    }
+
+    .development-point + .development-point {
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .development-body {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 18px 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .development-card {
+        padding: 1.8rem;
+      }
+
+      .universal-h2 {
+        font-size: 2.5rem;
+      }
+    }
+
   </style>
 </head>
 <body>
 
 <nav>
-   <h2><i><a href="https://mohahamza.github.io/TeachingPortfolio/">Muhammad Hamza</a></i></h2>
+   <h2><i><a href="/">Muhammad Hamza</a></i></h2>
   <ul>
-    <li><a href="teachingPhilospy.html">Philosophy</a></li>
-    <li><a href="Certification.html">Certifications</a></li>
+    <li><a href="teachingPhilospy.html">Teaching Phillospy</a></li>
     <li><a href="gml.html">Game-Based</a></li>
-    <li><a href="Blog.html">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="Certification.html">Certifications</a></li>
+    <!-- <li><a href="Blog.html">Blog</a></li> -->
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
+<section id="personal-development" class="fh5co-personal-development">
+	<div class="site-container">
 
-<section class="journal">
-  <div class="journal-container">
+		<h2 class="universal-h2 universal-h2-bckg">
+			Personal Development & Reflective Journal
+		</h2>
 
-    <h1>Professional Development Journal</h1>
-  
+		<div class="development-card">
 
-    <!-- Update 1: Background -->
-    <div class="journal-card">
-      <h2>Update 1: Background & Goals</h2>
-      <p><strong>Education:</strong> Bachelor’s in Computer Science, Master’s in AI & Machine Learning. Expertise in AI systems, microcontrollers, TinyML, and applied ML.</p>
-      <p><strong>Experience:</strong> 3 years as Computer Science Teacher & Lab Assistant; integrating Canva and Zoom into teaching.</p>
-      <p><strong>Motivation:</strong> Inspired by my mother’s dedication; aim to provide students with encouragement, guidance, and curiosity-driven learning.</p>
-      <h3>Goals & Action Plan</h3>
-      <ul>
-        <li><strong>Inquiry-driven Curriculum:</strong> Implement PBL, real-world projects, AI ethics discussions.</li>
-        <li><strong>AI with Human-Centered Teaching:</strong> AI as a tool, reflective journals, discussion + labs.</li>
-        <li><strong>Promote SDGs:</strong> Group projects aligned with Work & Economic Growth, tech-based solutions.</li>
-      </ul>
-      <h3>Reflective Methodology:</h3>
-      <p>Gibbs’ Reflective Cycle: Description → Feelings → Evaluation → Analysis → Conclusion → Action Plan</p>
-    <img src="Picture1.jpg" alt="" class="pictures">
-    <img src="Picture2.jpg" alt="" class="pictures" >
-    </div>
+			<div class="development-header">
+				<h3>Professional Growth</h3>
+				<p class="development-subtitle">
+					Continuous learning and professional development are essential in becoming an effective and reflective educator. Through seminars, workshops, digital tools, and educational resources, I continue to strengthen my teaching skills, broaden my perspectives, and improve my ability to support students in meaningful ways.
+				</p>
+			</div>
 
-    <!-- Update 2: Teaching Philosophy -->
-    <div class="journal-card">
-      <h2>Update 2: Teaching Philosophy & International Pedagogy</h2>
-      <p>Influenced by international models and classical philosophy:</p>
-      <ul>
-        <li><strong>Finnish Model:</strong> Student autonomy, minimal testing, phenomenon-based learning.</li>
-        <li><strong>Singapore STEM:</strong> Structured content, scaffolding, cognitive load awareness.</li>
-        <li><strong>Plato to Modern Pedagogy:</strong> Constructivism (Piaget), Social Constructivism (Vygotsky), Experiential Learning (Kolb).</li>
-      </ul>
-      <h3>Constructivism Application:</h3>
-      <p>Students experiment first (ESP32, sensors), then learn theory. Understanding through doing.</p>
-      <h3>Vygotsky – ZPD:</h3>
-      <p>Pair programming, scaffolded coding, gradual removal of support to maximize growth.</p>
-      <h3>Core Philosophy:</h3>
-      <ul>
-        <li>Learning is constructed</li>
-        <li>Technology enhances, teachers guide</li>
-        <li>Education must be ethical</li>
-        <li>Every learner has potential</li>
-        <li>Curiosity drives mastery</li>
-      </ul>
-      <h3>Dive Deeper:</h3>
-      <ul>
-        <li>Social Emotional Learning (SEL)</li>
-        <li>Inclusive Education</li>
-        <li>Zone of Proximal Development (Advanced Application)</li>
-      </ul>
-      <img src="Picture3.jpg" alt="" class="pictures">
-      <img src="Picture4.jpg" alt="" class="pictures">
-      <img src="Picture5.jpg" alt="" class="pictures">
-    </div>
+			<div class="development-body">
 
+				<div class="development-point">
+					<h4>Seminars & Webinars</h4>
+					<p>
+						Participating in seminars and webinars has helped me stay updated with modern teaching strategies, educational technologies, and current trends in education. These sessions provided valuable insights into classroom management, student engagement, and innovative teaching approaches that I can apply in future learning environments.
+					</p>
+					<a href="https://www.edutopia.org/" class="reference-link" target="_blank" rel="noopener noreferrer">Explore seminars & teaching ideas</a>
+				</div>
 
-    <!-- long and short internship section -->
-     <div class="journal-card">
-      <h2>Short internship project And Long Project experience</h2>
-      <h3>Short Internship Experince </h3>
-      <hr>
-      <p>
-During my short STEM internship, I introduced primary school students to different types of clouds, explaining their characteristics in a simple and engaging way. I then moved on to discussing cloud-related hazards, such as storms and heavy rainfall, and explained practical ways to stay safe in such situations. To make the session interactive, I asked students questions about various weather hazards and encouraged them to think about how they would respond if faced with those conditions.
+				<div class="development-point">
+					<h4>Workshops (iLab / Fab-Lab)</h4>
+					<p>
+						Hands-on workshops in iLab and Fab-Lab environments allowed me to explore creativity, design thinking, and practical problem-solving. These experiences strengthened my ability to integrate project-based learning and technology into education while encouraging collaboration and innovation.
+					</p>
+					<a href="https://www.instructables.com/" class="reference-link" target="_blank" rel="noopener noreferrer">Find maker workshop ideas</a>
+				</div>
 
-The experience was truly rewarding. The students were highly engaged, curious, and quick to grasp new concepts. Despite their young age, they demonstrated sharp thinking and offered thoughtful answers during discussions. Their enthusiasm and willingness to participate made the learning environment lively and enjoyable, leaving me with a very positive and memorable teaching experience.
+				<div class="development-point">
+					<h4>Trainings & Certifications</h4>
+					<p>
+						Through various trainings and certifications, I gained deeper knowledge in educational practices, digital literacy, and professional skills development. These learning opportunities improved my confidence and prepared me to become a more competent, adaptable, and responsible educator.
+					</p>
+					<a href="https://www.coursera.org/" class="reference-link" target="_blank" rel="noopener noreferrer">Browse professional teaching courses</a>
+				</div>
 
-      </p>
-      <hr>
-      <h3>Long internship Experience</h3>
-      <hr>
-      <p>During my extended STEM internship, I worked with secondary school students on the topic of deepfakes and digital awareness. I introduced them to the concept of deepfake technology, showing examples of manipulated images alongside original ones, and guided them on how to identify signs of alteration. This helped students develop critical thinking skills and a better understanding of how easily digital content can be misleading. <br><br>
+				<div class="development-point">
+					<h4>Guest Lectures & School Visits</h4>
+					<p>
+						Attending guest lectures and participating in school visits gave me the opportunity to learn from experienced educators and observe real classroom environments. These experiences helped me understand different teaching styles, school cultures, and the importance of creating positive relationships with students.
+					</p>
+					<a href="https://www.edweek.org/" class="reference-link" target="_blank" rel="noopener noreferrer">Read education news and school insights</a>
+				</div>
 
-To reinforce their learning, I organized a short Kahoot quiz, which made the session interactive and allowed students to test their knowledge in a fun way. I also facilitated a role-play activity focused on cyberbullying, where students explored how it affects young people, how governments attempt to address it, and where current efforts may fall short. This encouraged open discussion and deeper reflection on real-world issues.
+				<div class="development-point">
+					<h4>Articles, Podcasts & TED Talks</h4>
+					<p>
+						Reading educational articles, listening to podcasts, and watching TED Talks expanded my understanding of teaching, learning, and personal growth. These resources inspired me to think critically about education, reflect on my own teaching philosophy, and continuously seek improvement as a future teacher.
+					</p>
+					<a href="https://www.ted.com/topics/education" class="reference-link" target="_blank" rel="noopener noreferrer">Watch education TED Talks</a>
+				</div>
 
-The students performed very well throughout the sessions. They were engaged, thoughtful, and demonstrated a strong ability to analyze and respond to complex topics. Their participation and insights made the experience both productive and highly rewarding.</p>
-    </div>
+				<div class="development-point">
+					<h4>Digital Tools & Educational Technology</h4>
+					<p>
+						Exploring digital tools and educational technologies has enhanced my ability to create interactive and engaging learning experiences. By using platforms for collaboration, communication, and creativity, I learned how technology can support diverse learners and make education more accessible and effective.
+					</p>
+					<a href="https://www.commonsense.org/education/" class="reference-link" target="_blank" rel="noopener noreferrer">Explore digital learning tools</a>
+				</div>
 
-     <!--  -->
+			</div>
+		</div>
 
-    <!-- Update 3: International Education Research -->
-    <div class="journal-card">
-      <h2>Update 3: International Education Reflection</h2>
-      <p>Inspiring International Pedagogy
-        <br>
-Research & Reflection <br>
-International Pedagogical Influences
-As an AI and Computer Science educator, I believe effective pedagogy must be globally informed. Through research and observation, three international models strongly influence my approach:
-Finnish Education Model – Student Autonomy & Trust
-<br>
-Finland depends on:
-•	Teacher autonomy
-•	Minimal standardized testing
-•	Student well-being
-•	Phenomenon-based learning
-<br>
-Reflection:
-This model reinforces my belief that curiosity drives deeper learning than pressure. In my AI classes, instead of over-testing students, I integrate project-based assessment. For example, students design real-world AI solutions rather than memorizing definitions.
-<br><br>
-2. Singapore STEM Model – Structured Excellence
-Singapore balances:<br>
-•	High academic rigor
-•	Clear scaffolding
-•	Strong STEM emphasis
-This aligns with Cognitive Load Theory, ensuring complexity is introduced gradually.
-<br>
-Reflection:
-AI and microchip education can overwhelm learners. Inspired by Singapore’s structured approach, I scaffold content:
-Week 1–2: Sensors & data basics
-Week 3–4: Data preprocessing
-Week 5–6: ML model training
-Week 7–8: Deployment on microcontrollers
-This prevents overload while maintaining high standards.
-</p>
-<img src="Picture6.jpg" alt="" class="pictures">
-      <img src="Picture7.jpg" alt="" class="pictures">
-      <img src="Picture8.jpg" alt="" class="pictures">
-       <h3>References</h3>
-      
-       <h3><a href="https://www.oph.fi/en">https://www.oph.fi/en</a> </h3>
-       <h3> <a href="https://www.moe.gov.sg">https://www.moe.gov.sg</a></h3>
-    </div>
-   
-    <!-- Microteaching Experience -->
-<div class="journal-card">
-      <h2>MicroTeaching Experience</h2>
-      <h3>microteaching presentation on polarized societies and how people can work to bridge the divide </h3>
-      <hr>
-      <p>My partner Mubashir and I conducted a microteaching presentation on polarized societies and how people can work to bridge the divide. We began by explaining the meaning of polarization in simple terms, describing how it happens when groups in society have very different opinions and stop understanding each other. We also discussed how this can lead to conflict, misunderstanding, and lack of communication.
-
-To make the topic more relatable, we shared a real-life example of the recent NSV protest in Leuven. We explained what happened in a simple and neutral way, and discussed why such protests take place. This helped students connect the concept of polarization to real-world situations and understand its impact on society.
-<br><br>
-We also organized a few interactive activities during the session. In these activities, students were encouraged to share their thoughts, listen to different viewpoints, and think about ways to reduce division. We guided them to understand the importance of respect, open communication, and empathy. We also discussed simple ways to bridge the divide, such as having respectful conversations, avoiding quick judgments, and trying to find common ground.
-
-Overall, the session was engaging and meaningful. Students participated actively and showed interest in the topic. It was a valuable experience for both of us as we were able to teach an important social issue in a clear and practical way.
-
-
-      </p>
-      
-    </div>
-
-
-
-     <!--  -->
-
-    <!-- Update 4: Visits & Reflections -->
-    <div class="journal-card">
-      <h2>Update 4: Visits</h2>
-      <h3>ABC School, Brussels</h3>
-      <p>Observed hands-on labs and group discussions; replaced 30% of lectures with active learning. Gamified and art-integrated approaches were highly effective.</p>
-      <h3>Technopolis Kids Event, Mechelen</h3>
-      <p>Children learned the periodic table and planetary science through interactive digital games. Observed integration of art & craft into science learning.</p>
-      <h3>European Museum, Brussels</h3>
-      <p>Interactive exhibits, storytelling, and multimedia enhanced historical understanding. Learning outcome: teach students to collect and concisely organize data.</p>
-      <h3>Tour & Taxis Science Event</h3>
-      <p>Hands-on workshops, collaborative projects, and robotics demonstrations inspired creativity and engagement. Emphasized fun + learning for all ages.</p>
-      <h3>MSN Museum</h3>
-      <p>Observed historical exhibits including WWII displays; outdoor rooftop view for urban context. Inspired reflection on presenting complex topics effectively.</p>
-     <img src="Picture9.jpg" alt="" class="pictures">
-      <img src="Picture10.jpg" alt="" class="pictures">
-      <img src="Picture11.jpg" alt="" class="pictures">
-       <img src="Picture12.jpg" alt="" class="pictures">
-      <img src="Picture13.jpg" alt="" class="pictures">
-      <img src="Picture14.jpg" alt="" class="pictures">
-    </div>
-
-    <!-- Motivation Letter -->
-    <div class="journal-card">
-      <h2>Motivation Letter</h2>
-      <p>
-        Dear Selection Committee,<br>
-As a Computer Science and Artificial Intelligence educator, I am deeply committed to developing innovative, inclusive, and globally responsible learning environments.
-My academic background in Computer Science and AI, combined with three years of teaching experience, has allowed me to integrate emerging technologies into meaningful educational experiences. However, I believe that effective teaching extends beyond technical expertise. It requires intercultural awareness, emotional intelligence, and a reflective mindset.
-International education represents an opportunity to expand my pedagogical perspective. <br> I am particularly drawn to institutions that emphasize inquiry-based learning, intercultural dialogue, and ethical responsibility. These values align strongly with my own philosophy of education: that knowledge should empower students to contribute positively to society.
-My goal is to design AI and technology curricula that are globally relevant, socially responsible, and accessible to diverse learners. I aim to contribute actively to collaborative teaching communities, exchange innovative practices, and learn from multicultural perspectives.
-I am motivated not only to teach but also to grow. <br>I believe this opportunity will enhance my ability to create inclusive classrooms where students feel valued, challenged, and inspired.
-<br> Thank you for considering my application. <br>
-Sincerely, <br>
-Muhammad Hamza
-
-      </p>
-    </div>
-
-  </div>
+	</div>
 </section>
-  <p>
+
+<section id="personal-growth" class="fh5co-personal-development">
+	<div class="site-container">
+
+		<h2 class="universal-h2 universal-h2-bckg">
+			Personal Growth & Reflection
+		</h2>
+
+		<div class="development-card">
+
+			<div class="development-header">
+				<h3>Personal Growth</h3>
+				<p class="development-subtitle">
+					These activities support Hamza’s wellbeing, creativity, and community values. They show how personal interests shape his teaching style and enrich classroom learning.
+				</p>
+			</div>
+
+			<div class="development-body">
+
+				<div class="development-point">
+					<h4>Sports & Movement</h4>
+					<p>
+						Engaging in sports teaches teamwork, discipline, and energy management. These habits help Hamza bring active learning and confidence-building activities into the classroom.
+					</p>
+					<a href="https://www.activeforlife.com/" class="reference-link" target="_blank" rel="noopener noreferrer">Explore active learning ideas</a>
+				</div>
+
+				<div class="development-point">
+					<h4>Books & Documentaries</h4>
+					<p>
+						Reading books and watching documentaries expands Hamza’s understanding of teaching, culture, and creativity. These resources support thoughtful lesson planning and lifelong learning.
+					</p>
+					<a href="https://www.goodreads.com/" class="reference-link" target="_blank" rel="noopener noreferrer">Explore teaching books</a>
+				</div>
+
+				<div class="development-point">
+					<h4>Volunteering & Community</h4>
+					<p>
+						Volunteering builds empathy, leadership, and community awareness. Helping others inspires Hamza to create a supportive and caring classroom culture.
+					</p>
+					<a href="https://www.volunteermatch.org/" class="reference-link" target="_blank" rel="noopener noreferrer">Find volunteer opportunities</a>
+				</div>
+
+				<div class="development-point">
+					<h4>Museum Visits & Exhibitions</h4>
+					<p>
+						Visiting museums and exhibitions inspires new teaching ideas and deepens appreciation for art, history, and design. These experiences help Hamza bring real-world context into lessons.
+					</p>
+					<a href="https://www.britishmuseum.org/" class="reference-link" target="_blank" rel="noopener noreferrer">Discover museum learning</a>
+				</div>
+
+				<div class="development-point">
+					<h4>Theatre & Puppet Theatre</h4>
+					<p>
+						Theatre and puppet theatre support storytelling, expression, and student engagement. These art forms help Hamza design creative activities that strengthen communication skills.
+					</p>
+					<a href="https://www.theatrearts.org/" class="reference-link" target="_blank" rel="noopener noreferrer">Discover drama learning resources</a>
+				</div>
+
+				<div class="development-point">
+					<h4>Music & Instruments</h4>
+					<p>
+						Music and instrument practice develop rhythm, concentration, and emotional expression. Incorporating music into learning makes lessons more memorable and engaging.
+					</p>
+					<a href="https://www.musicnotes.com/" class="reference-link" target="_blank" rel="noopener noreferrer">Explore music in education</a>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+</section>
+
 </body>
 </html>
 
